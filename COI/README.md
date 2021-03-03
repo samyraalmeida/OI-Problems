@@ -1,1 +1,3 @@
-My solution to COI problems
+# COI - Croatian Olympiad in Informatics
+
+My solution to COI's problems
