@@ -1,11 +1,8 @@
-/*
-    OBI 2015 - P2 - Fase 2 - Fila
-    
-    Assunto: BIT, Segment Tree, busca na Segment Tree e busca na BIT em tempo logaritmo
-    Complexidade: O((n+q)*log2(n+q))
-    
-    Solução por Samyra Almeida
-*/
+// OBI 2015 - P2 - Fase 2 - Fila
+// Assunto: BIT, Segment Tree, busca na Segment Tree e busca na BIT em tempo logaritmo
+// Complexidade: O((n + q) * log2(n + q))
+// Solução por Samyra Almeida
+
 
 #include <bits/stdc++.h>
 
