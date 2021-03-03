@@ -2,7 +2,7 @@
     
 using namespace std;
     
-const int maxmask = (1<<20)+10, inf = 0x3f3f3f3f;
+const int maxmask = (1 << 20) + 10, inf = 0x3f3f3f3f;
     
 int n, k, m[30][30];
     
