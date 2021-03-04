@@ -1,6 +1,11 @@
-// OBI 2015 - Fila 
-// Solution with Treap
-// Solved by Samyra Almeida
+/*
+	OBI 2015 - Programação Nível 2 - Fase 2 - Fila
+
+	Assunto: Treap
+	Complexidade: O((n * log n)
+
+	Solução por Samyra Almeida
+*/
 
 #include <bits/stdc++.h>
 
@@ -74,7 +79,7 @@ int search(pnode t, int pos, int add = 0)
 	if(!t) return 0;
 
 	int px = add + sz(t->l);
-	//cout << px << " " << t->v << "\n";
+	
 	if(px == pos) return t->v;
 	else if(px > pos) return search(t->l, pos, add);
 	else return search(t->r, pos, px + 1);
@@ -98,12 +103,12 @@ int query(pnode t, int v, int add = 0)
 
 	int px = add + sz(t->l);
 
-	//cout << px << " " << t->M << "\n";
-
 	if(!t->l && !t->r) return px;
 
 	if(t->r && t->r->M > v) return query(t->r, v, px + 1);
+	
 	if(t->v > v) return px;
+	
 	if(t->l && t->l->M > v) return query(t->l, v, add);
 
 	return -1;
@@ -118,8 +123,7 @@ int main()
 
 	for(int i = 0 ; i < n ; ++i)
 	{
-		int x;
-		cin >> x;
+		int x;  cin >> x;
 
 		insert(treap, i, x);
 	}

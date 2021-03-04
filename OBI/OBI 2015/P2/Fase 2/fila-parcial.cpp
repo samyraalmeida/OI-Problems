@@ -1,5 +1,5 @@
 /* 
-	OBI 2015 - P2 - Fase 2 - Fila
+	OBI 2015 - Programação Nível 2 - Fase 2 - Fila
 	Solução para a parcial (40 pontos)
 
  	Primeiramente, montamos a seg com todos os participantes que ja estão na fila. Vale lembrar que nessa parcial NENHUM novo parcipante entrará 
@@ -25,19 +25,15 @@ const int maxn = 6e5+10;
 typedef long long ll;
 
 int n, q;
-ll v[maxn], seg[4*maxn];
+ll v[maxn], seg[4 * maxn];
 
 void buildSeg(int u, int l, int r)
 {
-	if(l == r) 
-	{
-		seg[u] = v[l];
-		return;
-	}
+	if(l == r) { seg[u] = v[l];  return; }
 
-	int mid = (l+r) >> 1, esq = u+u, dir = u+u + 1;
+	int mid = (l + r) >> 1, esq = 2 * u, dir = 2 * u + 1;
 
-	buildSeg(esq, l, mid); buildSeg(dir, mid+1, r);
+	buildSeg(esq, l, mid); buildSeg(dir, mid + 1, r);
 
 	seg[u] = max(seg[dir], seg[esq]);
 }
@@ -50,11 +46,11 @@ int searchSeg(int u, int l, int r, int p, ll val)
 
 	if(l == r) return l;
 
-	int mid = (l+r) >> 1, esq = u+u, dir = u+u + 1;
+	int mid = (l + r) >> 1, esq = 2 * u, dir = 2 * u + 1;
 
-	if(r > p) return max(searchSeg(dir, mid+1, r, p, val), searchSeg(esq, l, mid, p, val));
+	if(r > p) return max(searchSeg(dir, mid + 1, r, p, val), searchSeg(esq, l, mid, p, val));
 
-	if(seg[dir] > val) return searchSeg(dir, mid+1, r, p, val);
+	if(seg[dir] > val) return searchSeg(dir, mid + 1, r, p, val);
 
 	return searchSeg(esq, l, mid, p, val);
 }
@@ -78,6 +74,6 @@ int main()
 
 		if(id == 0) continue;
 
-		cout << searchSeg(1, 1, n, pos, x+v[pos]) << "\n";
+		cout << searchSeg(1, 1, n, pos, x + v[pos]) << "\n";
 	}
 }

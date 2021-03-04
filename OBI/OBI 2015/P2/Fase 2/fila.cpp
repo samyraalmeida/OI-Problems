@@ -1,8 +1,11 @@
-// OBI 2015 - P2 - Fase 2 - Fila
-// Assunto: BIT, Segment Tree, busca na Segment Tree e busca na BIT em tempo logaritmo
-// Complexidade: O((n + q) * log2(n + q))
-// Solução por Samyra Almeida
+/*
+	OBI 2015 - Programação Nível 2 - Fase 2 - Fila
 
+	Assunto: BIT, Segment Tree, busca na Segment Tree e busca na BIT em tempo logaritmo
+	Complexidade: O((n + q) * log2(n + q))
+
+	Solução por Samyra Almeida
+*/
 
 #include <bits/stdc++.h>
 
@@ -24,7 +27,7 @@ int sum_bit(int idx)
 
 int upd_bit(int idx, int val)
 {
-	for(int i = idx ; i <= n+q ; i += i&-i) bit[i] += val;
+	for(int i = idx ; i <= n + q ; i += i&-i) bit[i] += val;
 }
 
 int search_bit(int val)
@@ -33,9 +36,9 @@ int search_bit(int val)
 
 	for(int i = 30 ; i >= 0 ; --i)
 	{
-		int pot = (1<<i);
+		int pot = (1 << i);
 
-		if(resp + pot > n+q) continue;
+		if(resp + pot > n + q) continue;
 
 		if(bit[resp + pot] <= val)
 		{
@@ -47,23 +50,19 @@ int search_bit(int val)
 	return (val == 0)? resp : -1;
 }
 
-void upd_seg(int idx, int val, int u = 1, int l = 1, int r = n+q)
+void upd_seg(int idx, int val, int u = 1, int l = 1, int r = n + q)
 {
-	if(l == r) 
-	{
-		seg[u] = val;
-		return;
-	}
+	if(l == r) { seg[u] = val;  return; }
 
-	int mid = (l+r)>>1;
+	int mid = (l + r) >> 1;
 
-	if(idx <= mid) upd_seg(idx, val, 2*u, l, mid);
-	else upd_seg(idx, val, 2*u+1, mid+1, r);
+	if(idx <= mid) upd_seg(idx, val, 2 * u, l, mid);
+	else upd_seg(idx, val, 2 * u + 1, mid + 1, r);
 
-	seg[u] = max(seg[2*u], seg[2*u+1]);
+	seg[u] = max(seg[2 * u], seg[2 * u + 1]);
 }
 
-int search_seg(int idx, int val, int u = 1, int l = 1, int r = n+q)
+int search_seg(int idx, int val, int u = 1, int l = 1, int r = n + q)
 {
 	if(seg[u] <= val) return 0;
 	
@@ -71,13 +70,13 @@ int search_seg(int idx, int val, int u = 1, int l = 1, int r = n+q)
 
 	if(l == r) return l;
 
-	int mid = (l+r)>>1;
+	int mid = (l + r) >> 1;
 
-	if(r > idx) return max(search_seg(idx, val, 2*u+1, mid+1, r), search_seg(idx, val, 2*u, l, mid));
+	if(r > idx) return max(search_seg(idx, val, 2 * u + 1, mid + 1, r), search_seg(idx, val, 2 * u, l, mid));
 
-	if(seg[2*u+1] > val) return search_seg(idx, val, 2*u+1, mid+1, r);
+	if(seg[2 * u + 1] > val) return search_seg(idx, val, 2 * u + 1, mid + 1, r);
 
-	return search_seg(idx, val, 2*u, l, mid);
+	return search_seg(idx, val, 2 * u, l, mid);
 }
 
 int main()
@@ -88,17 +87,16 @@ int main()
 
 	for(int i = 0 ; i < n ; ++i)
 	{
-		cin >> x[i];
-		p[i] = i;
+		cin >> x[i];  p[i] = i;
 	}
 
 	cin >> q;
 
-	for(int i = n ; i < n+q ; ++i) cin >> t[i] >> p[i] >> x[i];
+	for(int i = n ; i < n + q ; ++i) cin >> t[i] >> p[i] >> x[i];
 
-	for(int i = 1 ; i <= n+q ; ++i) upd_bit(i, 1);
+	for(int i = 1 ; i <= n + q ; ++i) upd_bit(i, 1);
 
-	for(int i = n+q-1 ; i >= 0 ; --i)
+	for(int i = n + q-1 ; i >= 0 ; --i)
 	{
 		if(t[i] == 0)
 		{
@@ -109,7 +107,7 @@ int main()
 		else p[i] = search_bit(p[i] - 1) + 1;
 	}
 
-	for(int i = 0 ; i < n+q ; ++i)
+	for(int i = 0 ; i < n + q ; ++i)
 	{
 		if(t[i] == 0)
 		{
