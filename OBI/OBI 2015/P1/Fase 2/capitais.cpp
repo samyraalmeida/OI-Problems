@@ -1,7 +1,7 @@
 /*
 	OBI 2015 - Programação Nível 1 - Fase 2 - Capitais
 	
-	Assunto: Centroid
+	Assunto: Centroid Decomposition and LCA 
 	Complexidade: O(N * log N)
 
 	Solução por Samyra Almeida
