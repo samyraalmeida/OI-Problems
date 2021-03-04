@@ -1,5 +1,5 @@
 /*
-    OBI 2007 - P2 - Fase 1 - Pastas
+    OBI 2007 - Programação Nível 2 - Fase 1 - Pastas
     
     Complexidade: O(min(P, N))
     
