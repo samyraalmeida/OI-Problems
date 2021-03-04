@@ -39,9 +39,9 @@ int main()
 
 	for(int i = 2 ; i <= min(p, n) ; ++i)
 	{
-		if(ct[i] != ct[i-1])
+		if(ct[i] != ct[i - 1])
 		{
-			if(ct[i] == ct[i-1] - 1 && ok == 0) { ok = 1; }
+			if(ct[i] == ct[i - 1] - 1 && ok == 0) { ok = 1; }
 			else { cout << "N\n";  return 0; }
 		}
 	}
