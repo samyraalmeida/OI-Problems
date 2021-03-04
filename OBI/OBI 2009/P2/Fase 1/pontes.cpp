@@ -1,7 +1,11 @@
-// Caminho das Pontes - Programação Nível 2 - Fase 1 - OBI 2009
-// Menor Caminho - Dijkstra 
-// Complexidade: O(m*log n)
-// By Samyra Vitória
+/*
+	OBI 2009 - Programação Nível 2 - Fase 1 - Caminho das Pontes
+	
+	Assunto: Menor Caminho - Dijkstra 
+	Complexidade: O(m*log n)
+
+	Solução por Samyra Almeida
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -15,7 +19,7 @@ vector<pii> vis[maxn];
      
 void Dijkstra(int S)
 {
-    for(int i = 1;i <= n + 1 ; i++) dist[i] = inf; 
+    for(int i = 1 ; i <= n + 1 ; i++) dist[i] = inf; 
 
     dist[S] = 0;
     
