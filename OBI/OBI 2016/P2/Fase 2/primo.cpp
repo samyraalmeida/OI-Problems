@@ -19,15 +19,15 @@ void solve(int p, int qtd, ll val)
 {
 	if(val > n) return;
 
-	if(p == k+1)
+	if(p == k + 1)
 	{
-		if(qtd%2) resp += n/val;
-		else resp -= n/val;
+		if(qtd % 2) resp += n / val;
+		else resp -= n / val;
 		return;
 	}
 
-	solve(p+1, qtd+1, val*vet[p]);
-	solve(p+1, qtd, val);
+	solve(p + 1, qtd + 1, val * vet[p]);
+	solve(p + 1, qtd, val);
 }
 
 int32_t main()
