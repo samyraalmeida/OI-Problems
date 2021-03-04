@@ -1,7 +1,7 @@
 /*
 	OBI 2015 - Programação Nível 2 - Fase 2 - Mina
 
-	Assunto: Dynamic Programming and BFS
+	Assunto: Dijkstra 
 	Complexidade: O((n * log n)
 
 	Solução por Samyra Almeida
@@ -41,7 +41,7 @@ void bfs(int x, int y)
 
 		for(int i = 0 ; i < 4 ; ++i)
 		{
-			if(m[a + dx[i]][b + dy[i]]!=-1 && dp[a + dx[i]][b + dy[i]] > dp[a][b] + m[a + dx[i]][b + dy[i]])
+			if(m[a + dx[i]][b + dy[i]] != -1 && dp[a + dx[i]][b + dy[i]] > dp[a][b] + m[a + dx[i]][b + dy[i]])
 			{
 				dp[a + dx[i]][b + dy[i]]=dp[a][b] + m[a + dx[i]][b + dy[i]];
 				row.push(iii(-dp[a + dx[i]][b + dy[i]], ii(a + dx[i], b + dy[i])));
