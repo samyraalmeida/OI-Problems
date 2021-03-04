@@ -1,3 +1,12 @@
+/*
+	OBI 2015 - Programação Nível 1 - Fase 2 - Capitais
+	
+	Assunto: Centroid
+	Complexidade: O(N * log N)
+
+	Solução por Samyra Almeida
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;

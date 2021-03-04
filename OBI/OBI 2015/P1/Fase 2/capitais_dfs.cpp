@@ -1,8 +1,17 @@
+/*
+	OBI 2015 - Programação Nível 1 - Fase 2 - Capitais
+	
+	Assunto: DFS - Busca em Profundidade 
+	Complexidade: O(N + M)
+
+	Solução por Samyra Almeida
+*/
+
 #include<bits/stdc++.h>
 
 using namespace std;
 
-const int maxn = 1e5+10, inf = 1e9;
+const int maxn = 1e5 + 10, inf = 1e9;
 
 int n, h[maxn], ans = inf;
 vector<int> graph[maxn];
