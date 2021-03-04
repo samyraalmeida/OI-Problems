@@ -2,7 +2,7 @@
 	OBI 2015 - Programação Nível 2 - Fase 2 - Mina
 
 	Assunto: Dijkstra 
-	Complexidade: O(((n + m) * log (n + m))
+	Complexidade: O(((n * m) * log (n * m))
 
 	Solução por Samyra Almeida
 */
