@@ -1,7 +1,11 @@
-// Pizza - Programação Nível 2 - Fase 2 - OBI 2007
-// DP - Maximum Sum
-// Complexity: O(n)
-// By Samyra Almeida
+/*
+    OBI 2007 - Programação Nível 2 - Fase 2 - Pizza
+	
+	Assunto: Dynamic Programming - Maximum Sum
+    Complexidade: O(N)
+    
+    Solução por Samyra Almeida
+*/
 
 #include <bits/stdc++.h>
 
