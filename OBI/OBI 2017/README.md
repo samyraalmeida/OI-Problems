@@ -1,3 +1,3 @@
-# OBI 2017 - Programming Level 1
+# OBI 2017
 
-My solutions to OBI 2017 Programming Level 1 problems
+My solutions to OBI 2017 problems
